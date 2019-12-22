@@ -1,9 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-#define vi vector<int>
-#define vvi vector<vector<int>>
-
+ 
 #define LP(i,n) for(ll i=0;i<n;i++)
 #define LP1(i,n) for(ll i=1;i<=n;i++)
 #define BLP1(i, n) for(ll i=n;i>0;i--)
@@ -40,12 +38,31 @@ ll sum=0, sum1=0, mul=0, subs=0, res=0, test=0, num=0, num1=0;
 string in;
 int testcases(){ cin>>test; return test; }
 
+int solve(int A, int B, int C){
+    long long multi=(B*C)/__gcd(B,C);
+    long long l=0,r=1000000000000000000, mid, res, temp;
+    while(l <= r){
+        nl;
+        mid=(l + r) >> 1;
+        temp = (mid/B) + (mid/C) - (mid/multi);
+        //b5(l, r, mid, temp, multi);
+        if(temp >= A){
+            res = mid;
+            r = mid-1;
+        }
+        else{
+            l = mid+1;
+        }
+    }
+    return (int)(res%MOD);
+}
+
 int main(){
 IOS();
     //t = tc();
     t = 1;
     while(t--){
-        
+        cout<<solve(4, 2, 3);
     }
     
     return 0;

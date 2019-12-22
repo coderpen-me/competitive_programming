@@ -1,9 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-#define vi vector<int>
-#define vvi vector<vector<int>>
-
+ 
 #define LP(i,n) for(ll i=0;i<n;i++)
 #define LP1(i,n) for(ll i=1;i<=n;i++)
 #define BLP1(i, n) for(ll i=n;i>0;i--)
@@ -45,7 +43,21 @@ IOS();
     //t = tc();
     t = 1;
     while(t--){
-        
+        x = 10;
+        int l = 0, r = x, ans;
+        if(x == 0 || x == 1) return x;
+        while(l <= r){
+            int mid = l + (r - l) / 2;
+            if((mid) == x/mid) return mid;
+            if((mid) < x/mid){
+                l = mid + 1;
+                ans = mid;
+            }
+            else{
+                r = mid - 1;
+            }
+        }
+        return ans;
     }
     
     return 0;

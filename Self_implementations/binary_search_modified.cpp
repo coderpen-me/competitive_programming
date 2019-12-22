@@ -1,9 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-#define vi vector<int>
-#define vvi vector<vector<int>>
-
+ 
 #define LP(i,n) for(ll i=0;i<n;i++)
 #define LP1(i,n) for(ll i=1;i<=n;i++)
 #define BLP1(i, n) for(ll i=n;i>0;i--)
@@ -45,7 +43,16 @@ IOS();
     //t = tc();
     t = 1;
     while(t--){
-        
+        int arr[10] = {4, 15, 26, 34, 56, 57, 58, 60, 89, 99};
+        int k = 0;
+        int n = sizeof(arr)/sizeof(arr[0]);
+        int x = 60;
+        for(int b = n/2; b >= 1; b /= 2){
+            while(k+b < n && arr[k+b] <= x) k += b;
+        }
+        if(arr[k] == x){
+            cout<<"Found at "<<k<<" value is "<<arr[k];
+        }
     }
     
     return 0;

@@ -1,9 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-#define vi vector<int>
-#define vvi vector<vector<int>>
-
+ 
 #define LP(i,n) for(ll i=0;i<n;i++)
 #define LP1(i,n) for(ll i=1;i<=n;i++)
 #define BLP1(i, n) for(ll i=n;i>0;i--)

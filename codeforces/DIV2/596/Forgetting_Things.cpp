@@ -45,7 +45,23 @@ IOS();
     //t = tc();
     t = 1;
     while(t--){
-        
+        cin>>u>>v;
+        if( u == 9 && v == 1){
+            cout<<99<<" "<<100;
+            continue;
+        }
+        if(u > v){
+            cout<<-1;
+            continue;
+        }
+        if(abs(u-v) > 1){
+            cout<<-1;
+            continue;
+        }
+        if(u == v){
+            cout<<((u*10)+1)<<" "<<((v*10)+2);
+        }
+        else cout<<((u*10)+9)<<" "<<(v*10);
     }
     
     return 0;

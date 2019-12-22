@@ -12,7 +12,9 @@ typedef long long ll;
 #define el '\n'
 #define IOS() ios_base::sync_with_stdio(0);cin.tie(0);
 #define tc() testcases()
- 
+#define pv(A) printvector(A)
+#define pvv(A) printvectorvector(A)
+
 #define a1(a) cout<<a<<" ";
 #define a2(a, b) cout<<a<<" "<<b<<" ";
 #define a3(a, b, c) cout<<a<<" "<<b<<" "<<c<<" ";
@@ -39,6 +41,25 @@ ll sum=0, sum1=0, mul=0, subs=0, res=0, test=0, num=0, num1=0;
 //ll count=0, ctl=0, ctrl=0, divi=0, flag=0, cal=0, must=0, test=0;
 string in;
 int testcases(){ cin>>test; return test; }
+void printvector(vector<int> A){
+    nl;
+    for(auto x : A){
+        a1(x);
+    }
+    nl;
+}
+
+void printvectorvector(vector<vector<int>> A){
+    nl;
+    for(auto x : A){
+        for(auto y : x){
+            a1(y);
+        }
+        nl;
+    }
+    nl;
+}
+
 
 int main(){
 IOS();

@@ -1,9 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-#define vi vector<int>
-#define vvi vector<vector<int>>
-
+ 
 #define LP(i,n) for(ll i=0;i<n;i++)
 #define LP1(i,n) for(ll i=1;i<=n;i++)
 #define BLP1(i, n) for(ll i=n;i>0;i--)
@@ -40,12 +38,34 @@ ll sum=0, sum1=0, mul=0, subs=0, res=0, test=0, num=0, num1=0;
 string in;
 int testcases(){ cin>>test; return test; }
 
+void recurr(vector<string> &check, vector<int> &diag1, vector<int> &diag2, vector<int> &column, vector<vector<string>> &res, long long A, long long y){
+    if(y == A){
+        res.push_back(check);
+        return;
+    }
+    for(int x = 0; x < A; x++){
+        if(column[x] || diag1[x+y] || diag2[x-y+A-1]) continue;
+        column[x] = diag1[x+y] = diag2[x-y+A-1] = 1;
+        check[y][x] = 'Q';
+        recurr(check, diag1, diag2, column, res, A, y+1);
+        column[x] = diag1[x+y] = diag2[x-y+A-1] = 0;
+        check[y][x] = '.';
+    }
+}
+
 int main(){
 IOS();
     //t = tc();
     t = 1;
     while(t--){
-        
+        int A = 4;
+        vector<vector<string>> res;
+        vector<string> check(A, string(A, '.'));
+        vector<int> diag1(2*A, 0);
+        vector<int> diag2(2*A, 0);
+        vector<int> column(A, 0);
+        recurr(check, diag1, diag2, column, res, A, 0);
+        //Here return or print the result vector res//
     }
     
     return 0;
