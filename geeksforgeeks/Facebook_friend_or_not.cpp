@@ -84,10 +84,74 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
-        
+        cin>>u>>v;
+        //a2(u, v);
+        map<char, set<char>> m;
+        LP(i, u){
+            char c;
+            cin>>c;
+            //a1(c);
+        }
+        LP(j, v){
+            char c1, c2;
+            cin>>in>>c1>>c2;
+            //b3(in, c1, c2);
+            if(in[1] == 'd'){
+                m[c1].insert(c2);
+                m[c2].insert(c1);
+            }
+            else{
+                int flag = 0;
+
+                stack<char> s;
+                map<char, int> mm;
+
+                for(auto x : m[c1]){
+                    s.push(x);
+                }
+
+                while(!s.empty()){
+                    char temp = s.top();
+                    s.pop();
+                    if(mm[temp] == 2){
+                        //a1("get");
+                        continue;
+                    }
+                    if(temp == c2){
+                        b1(1);
+                        flag = 1;
+                        break;
+                    }
+                    for(auto x : m[temp]){
+                        //a2("pushing", x);
+                        s.push(x);
+                    }
+                    mm[temp] = 2;
+                }
+
+                /*for(auto x : m[c1]){
+                    if(x == c2){
+                        b1(1);
+                        flag = 1;
+                        continue;
+                    }
+                    else if(m[x].find(c2) != m[x].end()){
+                        b1(1);
+                        flag = 1;
+                        continue;
+                    }
+                }*/
+                if(flag == 0){
+                    b1(0);
+                }
+            }
+        }
+        /*for(auto x : m['p']){
+            a1(x);
+        }*/
     }
     
     return 0;

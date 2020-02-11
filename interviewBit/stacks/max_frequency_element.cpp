@@ -37,6 +37,18 @@ const ll MAXn = 1e5 + 5, MAXlg = __lg(MAXn) + 2;
 const ll MOD = 1000000007;
 const ll INF = ll(1e15);
 
+ll a[MAXn], b[MAXn], c[MAXn], d[MAXn];
+
+ll t = 0, u = 0, v = 0, w = 0, x = 0, y = 0, z = 0;
+ll sum = 0, sum1 = 0, mul = 0, subs = 0, test = 0, num = 0, num1 = 0;
+//ll aa=0, bb=0, cc=0, dd=0, ee=0;
+//ll count=0, ctl=0, ctrl=0, divi=0, flag=0, cal=0, must=0, test=0;
+string in;
+int testcases()
+{
+    cin >> test;
+    return test;
+}
 void printvectorint(vector<int> A)
 {
     nl;
@@ -70,25 +82,52 @@ void printvectorvectorint(vector<vector<int>> A)
     }
     nl;
 }
-ll a[MAXn], b[MAXn], c[MAXn], d[MAXn];
-ll t = 0, u = 0, v = 0, w = 0, x = 0, y = 0, z = 0;
-ll sum = 0, sum1 = 0, mul = 0, subs = 0, test = 0, num = 0, num1 = 0;
-//ll aa=0, bb=0, cc=0, dd=0, ee=0;
-//ll count=0, ctl=0, ctrl=0, divi=0, flag=0, cal=0, must=0, test=0;
-string in;
-int testcases()
-{
-    cin >> test;
-    return test;
-}
 
-int main(){
-IOS();
+int main()
+{
+    IOS();
     //t = tc();
     t = 1;
-    while(t--){
-        
+    while (t--)
+    {
+        vector<vector<int>> A{{1, 5},
+            {1, 7},
+            {1, 5},
+            {1, 7},
+            {1, 4},
+            {1, 5},
+            {2, 0},
+            {2, 0},
+            {2, 0},
+            {2, 0}};
+
+        vector<int> ans;
+        unordered_map<int, int> f;
+        unordered_map<int, stack<int>> m;
+        int maxfreq = 0;
+        for (int i = 0; i < A.size(); i++)
+        {
+            int opt = A[i][0];
+            int elem = A[i][1];
+            if (opt == 1)
+            {
+                f[elem]++;
+                maxfreq = max(maxfreq, f[elem]);
+                m[f[elem]].push(elem);
+                ans.push_back(-1);
+            }
+            else if (opt == 2)
+            {
+                int x = m[maxfreq].top();
+                f[x]--;
+                m[maxfreq].pop();
+                if (m[maxfreq].size() == 0)
+                    maxfreq--;
+                ans.push_back(x);
+            }
+        }
+        pvi(ans);
     }
-    
+
     return 0;
 }

@@ -84,10 +84,17 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
-        
+        cin>>u;
+        ll dp[u+1];
+        dp[1] = 1;
+        dp[2] = 2;
+        for(int i = 3; i <= u; i++){
+            dp[i] = dp[i-1]+dp[i-2];
+        }
+        b1(dp[u]%MOD);
     }
     
     return 0;

@@ -84,8 +84,8 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
         
     }

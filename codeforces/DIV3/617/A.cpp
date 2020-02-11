@@ -70,12 +70,15 @@ void printvectorvectorint(vector<vector<int>> A)
     }
     nl;
 }
+
 ll a[MAXn], b[MAXn], c[MAXn], d[MAXn];
+
 ll t = 0, u = 0, v = 0, w = 0, x = 0, y = 0, z = 0;
 ll sum = 0, sum1 = 0, mul = 0, subs = 0, test = 0, num = 0, num1 = 0;
 //ll aa=0, bb=0, cc=0, dd=0, ee=0;
 //ll count=0, ctl=0, ctrl=0, divi=0, flag=0, cal=0, must=0, test=0;
 string in;
+
 int testcases()
 {
     cin >> test;
@@ -84,10 +87,28 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
-        
+        cin>>u;
+        int flag = 0;
+        z = 0, y = 0;
+        LP(i, u){
+            cin>>v;
+            if(v & 1){
+                z++;
+            }
+            else y++;
+        }
+        if(z & 1){
+            b1("YES");
+        }
+        else{
+            if(y > 0 && z != 0){
+                b1("YES");
+            }
+            else b1("NO");
+        }
     }
     
     return 0;

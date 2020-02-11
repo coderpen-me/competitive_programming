@@ -82,13 +82,71 @@ int testcases()
     return test;
 }
 
-int main(){
-IOS();
+int n, k;
+
+vector<pair<int, ll>> tree[500001];
+
+int vis[500001];
+
+ll ans;
+
+void solve(int x, ll sum, ll chance)
+{
+    vis[x] = 1;
+
+    if (chance <= 0)
+    {
+        return;
+    }
+
+    for (int i = 0; i < tree[x].size(); i++)
+    {
+        pair<int, ll> p;
+
+        p = tree[x][i];
+
+        if (vis[p.first] == 0)
+        {
+            ll temp = sum + (p.second * chance);
+
+            if (temp > ans)
+                ans = temp;
+
+            sum = sum + p.second;
+
+            solve(p.first, sum, chance - 1);
+
+            sum = sum - p.second;
+        }
+    }
+}
+
+int main()
+{
+    IOS();
     //t = tc();
     t = 1;
-    while(t--){
-        
+    while (t--)
+    {
+        int A = 3;
+        vi B = {0, 1, 1, 2, 2, 3};
+        vi C = {1, 6, 7, 21, 5, 18};
+        int s = B.size();
+        for (int i = 1; i < s; i++){
+            ll a, b, c;
+            b = i+1;
+            a = B[i];
+            c = abs(C[i]-C[a-1]);
+            tree[b].push_back(make_pair(a, c));
+            tree[a].push_back(make_pair(b, c));
+            /*a3(a, b, c);
+            nl;*/
+        }
+        ans = 0;
+        memset(vis, 0, sizeof(vis));
+        solve(1, 0, A);
+        cout << ans;
     }
-    
+
     return 0;
 }

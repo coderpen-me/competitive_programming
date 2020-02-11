@@ -84,10 +84,35 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
-        
+        cin>>u;
+        LP(i, u){
+            cin>>a[i];
+        }
+        ll max_reach = a[0];
+        ll curr_reach = a[0];
+        ll steps = 1;
+        int flag = 0;
+        for(int i = 1; i <= max_reach; i++){
+            if(i == u-1){
+                b1(steps);
+                flag = 1;
+                break;
+            }
+            curr_reach = max(curr_reach, i+a[i]);
+            if(i == max_reach){
+                if(curr_reach <= i){
+                    b1(-1);
+                    flag = 1;
+                    break;
+                }
+                max_reach = curr_reach;
+                steps++;
+            }
+        }
+        if(flag == 0) b1(-1);
     }
     
     return 0;

@@ -84,10 +84,25 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
-        
+        cin>>u;
+        int A[2][u];
+        for(int i = 0; i <= 1; i++){
+            for(int j = 0; j < u; j++){
+                cin>>A[i][j];
+            }
+        }
+        ll dp[u][2];
+        memset(dp, 0, sizeof dp);
+        dp[0][1] = max(A[0][0], A[1][0]);
+        for(int i = 1; i < u; i++){
+            int max_curr = max(A[0][i], A[1][i]);
+            dp[i][0] = max(dp[i-1][0], dp[i-1][1]);
+            dp[i][1] = max_curr + dp[i-1][0];
+        }
+        b1(max(dp[u-1][0], dp[u-1][1]));
     }
     
     return 0;

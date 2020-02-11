@@ -84,10 +84,23 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
-        
+        cin>>u>>in;
+        int dp[u+1];
+        if(u == 0 || in[0] == '0'){
+            b1(0);
+            continue;
+        }
+        dp[0] = 1;
+        dp[1] = 1;
+        for(int i = 2; i <= u; i++){
+            dp[i] = 0;
+            if(in[i-1] > '0') dp[i] = dp[i-1];
+            if(in[i-2] == '1' || (in[i-2] == '2' && in[i-1] <= '6')) dp[i] += dp[i-2];
+        }
+        b1(dp[u]);
     }
     
     return 0;

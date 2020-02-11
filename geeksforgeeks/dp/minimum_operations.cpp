@@ -84,10 +84,21 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
+    ll dp[10001];
+    dp[1] = 1;
+    dp[2] = 2;
+    dp[3] = 3;
+    for(int i = 4; i <= 10000; i++){
+        if(i & 1){
+            dp[i] = 1 + dp[i-1];
+        }
+        else dp[i] = 1 + min(dp[i-1], dp[i/2]);
+    }
     while(t--){
-        
+        cin>>u;
+        b1(dp[u]);
     }
     
     return 0;

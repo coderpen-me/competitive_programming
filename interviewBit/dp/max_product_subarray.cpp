@@ -84,11 +84,46 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
+        cin>>u;
+        LP(i, u){
+            cin>>a[i];
+        }
+        int max_ending_here = 1;
+        int min_ending_here = 1; 
+        int max_so_far = INT_MIN; 
+        int flag = 0; 
+        for (int i = 0; i < u; i++) {
+            if (a[i] > 0){ 
+                max_ending_here = max_ending_here * a[i]; 
+                min_ending_here = min(min_ending_here * a[i], 1LL); 
+                flag = 1; 
+            }
+            else if (a[i] == 0){ 
+                max_ending_here = 1; 
+                min_ending_here = 1; 
+            }    
+            else{ 
+                int temp = max_ending_here; 
+                max_ending_here = max(min_ending_here * a[i], 1LL); 
+                min_ending_here = temp * a[i]; 
+            }
+            if (max_so_far < max_ending_here) 
+                max_so_far = max_ending_here; 
+        }
+        b1(max_so_far);
         
+        /*ll r = a[0];
+        for(int i = 1, imax = r, imin = r; i < u; i++){
+            if(a[i] < 0)
+                swap(imax, imin);
+            imax = max(a[i], imax * a[i]);
+            imin = min(a[i], imin * a[i]);
+            r = max(r, (ll)imax);
+        }
+        b1(r);*/
     }
-    
     return 0;
 }

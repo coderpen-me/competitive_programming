@@ -87,7 +87,26 @@ IOS();
     //t = tc();
     t = 1;
     while(t--){
-        
+        vi A{2, 4, 2, 6, 1, 7, 8, 9, 2, 1};
+        int n = A.size();
+        ll dp[n];
+        dp[0] = 1;
+        for(int i = 1; i < n; i++){
+            if(A[i] > A[i-1]){
+                dp[i] = dp[i-1]+1;
+            }
+            else dp[i] = 1;
+        }
+        ll ret = dp[n-1], temp;
+        for(int i = n-2; i >= 0; i--){
+            if(A[i] > A[i+1]){
+                temp = dp[i+1] + 1;
+            }
+            else temp = 1;
+            ret += max(temp, dp[i]);
+            dp[i] = temp;
+        }
+        a1(ret);
     }
     
     return 0;
