@@ -14,5 +14,5 @@
         "regex": "cpp",
         "valarray": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "competitive-programming-helper.firstTime": false
 }
