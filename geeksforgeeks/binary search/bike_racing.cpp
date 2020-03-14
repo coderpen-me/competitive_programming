@@ -1,10 +1,10 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
 #define vi vector<int>
 #define vs vector<string>
 #define vvi vector<vector<int>>
-#define pb(a) push_back(a)
+
 #define LP(i, n) for (ll i = 0; i < n; i++)
 #define LP1(i, n) for (ll i = 1; i <= n; i++)
 #define BLP1(i, n) for (ll i = n; i > 0; i--)
@@ -82,13 +82,49 @@ int testcases()
     return test;
 }
 
-int main(){
-IOS();
-    //t = tc();
-    t = 1;
-    while(t--){
-        
+ll getTotalSpeed(ll x, const vector<pair<int,int>>& a, ll L) {
+    ll res = 0;
+    for (const auto p : a) {
+        ll s = p.first + x*p.second;
+        if (s >= L) {
+            res += s;
+        }
     }
-    
-    return 0;
+    return res;
+}
+
+ll find(int n, const vector<pair<int,int>>& a, ll M, ll L) {
+    ll x = 0;
+    ll count = M;
+    while (count > 0) {
+        ll step = count / 2;
+        ll y = x + step;
+        b4(count, x, step, y);
+        if (getTotalSpeed(y, a, L) < M) {
+            x = y+1;
+            count -= step+1;
+        } else {
+            count = step;
+        }
+    }
+    return x;
+}
+
+int main() {
+	int t;
+	cin >> t;
+	while (t-- > 0) {
+	    int n; cin >> n;
+	    
+	    ll m; cin >> m;
+	    ll f; cin >> f;
+	    
+	    vector<pair<int,int>> a(n);
+	    for (int i = 0; i < n; i++) {
+	        cin >> a[i].first >> a[i].second;
+	    }
+	    
+	    cout << find(n,a,m,f) << '\n';
+	}
+	return 0;
 }

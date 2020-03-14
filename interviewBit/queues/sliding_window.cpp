@@ -4,7 +4,7 @@ typedef long long ll;
 #define vi vector<int>
 #define vs vector<string>
 #define vvi vector<vector<int>>
-#define pb(a) push_back(a)
+
 #define LP(i, n) for (ll i = 0; i < n; i++)
 #define LP1(i, n) for (ll i = 1; i <= n; i++)
 #define BLP1(i, n) for (ll i = n; i > 0; i--)
@@ -87,6 +87,30 @@ IOS();
     //t = tc();
     t = 1;
     while(t--){
+        vi A = {1, 3, -1, -3, 5, 3, 6, 7};
+        int B = 3;
+        /*int s = A.size();
+        int st = 0, end = 0;
+        map<int, int> hash;
+        vector<int> ret;
+        while(end != (s)){
+            while((end - st) > (B - 1)){
+                hash[A[st]]--;
+                st++;
+            }
+            hash[A[end]]++;
+            end++;
+            if((end - st) > (B - 1)){
+                for(auto it = hash.rbegin(); it != hash.rend(); it++){
+                    if((it->second) > 0){
+                        ret.push_back(it->first);
+                        break;
+                    }
+                }
+            }
+        }
+        pvi(ret);*/
+
         
     }
     

@@ -4,7 +4,7 @@ typedef long long ll;
 #define vi vector<int>
 #define vs vector<string>
 #define vvi vector<vector<int>>
-#define pb(a) push_back(a)
+
 #define LP(i, n) for (ll i = 0; i < n; i++)
 #define LP1(i, n) for (ll i = 1; i <= n; i++)
 #define BLP1(i, n) for (ll i = n; i > 0; i--)
@@ -82,13 +82,49 @@ int testcases()
     return test;
 }
 
-int main(){
-IOS();
+int main()
+{
+    IOS();
     //t = tc();
     t = 1;
-    while(t--){
-        
+    while (t--)
+    {
+        unordered_set<int> s;
+        int sum = 0, n = A.size(), m = B.size();
+        int hash[m];
+        for (int i = 0; i < n; i++)
+            A[i]--;
+        for (int i = 0; i < m; i++)
+        {
+            sum += B[i];
+            hash[i] = 0;
+        }
+        for (int i = 0; i < m; i++)
+        {
+            if (B[i] > 0)
+                s.insert(i);
+        }
+        int l = 0, ans = INT_MAX, w;
+        for (int i = 0; i < n; i++)
+        {
+            w = A[i];
+            hash[w]++;
+            if (hash[w] == B[w])
+                s.erase(w);
+            while (s.empty())
+            {
+                ans = min(ans, i - l + 1 - sum);
+                w = A[l];
+                --hash[w];
+                if (hash[w] == B[w] - 1)
+                    s.insert(w);
+                l++;
+            }
+        }
+        if (ans == INT_MAX)
+            ans = -1;
+        b1(ans);
     }
-    
+
     return 0;
 }

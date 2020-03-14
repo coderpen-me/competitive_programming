@@ -4,11 +4,11 @@ typedef long long ll;
 #define vi vector<int>
 #define vs vector<string>
 #define vvi vector<vector<int>>
-#define pb(a) push_back(a)
+
 #define LP(i, n) for (ll i = 0; i < n; i++)
 #define LP1(i, n) for (ll i = 1; i <= n; i++)
-#define BLP1(i, n) for (ll i = n; i > 0; i--)
-#define BLP(i, n) for (ll i = n; i >= 0; i--)
+#define BLP(i, n) for (ll i = n; i > 0; i--)
+#define BLP1(i, n) for (ll i = n; i >= 0; i--)
 
 #define el '\n'
 #define IOS()                     \
@@ -82,12 +82,74 @@ int testcases()
     return test;
 }
 
+struct Jobs{
+    int id, deadline, profit;
+};
+
+bool comp(Jobs a, Jobs b){
+    return a.profit > b.profit;
+}
+
+void jobsequencing(Jobs A[], int u){
+    sort(A, A + u, comp);
+    sum = 0;
+    sum1 = 0;
+    int tagged[u];
+    LP(i, u){
+        tagged[i] = 0;
+    }
+    LP(i, u){
+        for(int j = min(u, A[i].deadline)-1; j >= 0; j--){
+            if(tagged[j] == 0){
+                tagged[j] = 1;
+                sum1++;
+                sum += A[i].profit;
+                break;
+            }
+        }
+    }
+    b2(sum1, sum);
+}
+
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
-        
+        /*
+        Naive Approach
+        cin>>u;
+        vvi A(101);
+        LP(i, u){
+            cin>>v>>w>>x;
+            LP1(j, w){
+                A[j].push_back(x);
+            }
+            m[x]++;
+        }
+        sum = 0;
+        sum1 = 0;
+        BLP(i, 100){
+            sort(A[i].begin(), A[i].end(), greater<int>());
+            for(auto x : A[i]){
+                if(m[x] > 0){
+                    sum += x;
+                    sum1++;
+                    m[x]--;
+                    break;
+                }
+            }
+        }
+        b2(sum1, sum);
+        */
+        //Greedy Solution
+
+        cin>>u;
+        Jobs A[100];
+        LP(i, u){
+            cin>>A[i].id>>A[i].deadline>>A[i].profit;
+        }
+        jobsequencing(A, u);
     }
     
     return 0;

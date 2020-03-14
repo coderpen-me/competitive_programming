@@ -5,6 +5,7 @@ typedef long long ll;
 #define vs vector<string>
 #define vvi vector<vector<int>>
 #define pb(a) push_back(a)
+
 #define LP(i, n) for (ll i = 0; i < n; i++)
 #define LP1(i, n) for (ll i = 1; i <= n; i++)
 #define BLP1(i, n) for (ll i = n; i > 0; i--)
@@ -87,7 +88,31 @@ IOS();
     //t = tc();
     t = 1;
     while(t--){
-        
+        cin>>u;
+        LP(i, u)
+            cin>>a[i];
+        LP(i, u)
+            cin>>b[i];
+        num = 0;
+        vi cc;
+        LP(i, u)
+            cc.pb(a[i] - b[i]);
+        sort(cc.begin(), cc.end());
+        //LP(i , u) a1(cc[i]);
+        /*v = 0, w = u - 1;
+        while(v < w){
+            if(c[v] + c[w] > 0){
+                num += (w - v);
+                w--;
+            }
+            else v++;
+        }*/
+        LP(i, u){
+            if(cc[i] <= 0) continue;
+            int p = lower_bound(cc.begin(), cc.end(), -cc[i] + 1) - cc.begin();
+            num += (i - p);
+        }
+        b1(num);
     }
     
     return 0;

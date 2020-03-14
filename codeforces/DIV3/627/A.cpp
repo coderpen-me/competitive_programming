@@ -4,7 +4,7 @@ typedef long long ll;
 #define vi vector<int>
 #define vs vector<string>
 #define vvi vector<vector<int>>
-#define pb(a) push_back(a)
+
 #define LP(i, n) for (ll i = 0; i < n; i++)
 #define LP1(i, n) for (ll i = 1; i <= n; i++)
 #define BLP1(i, n) for (ll i = n; i > 0; i--)
@@ -84,10 +84,20 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
-        
+        cin>>u;
+        ll ref;
+        cin>>ref;
+        int flag = 0;
+        LP(i, u-1){
+            cin>>v;
+            if(abs(ref - v) & 1){
+                flag = 1;
+            }
+        }
+        (flag == 0) ? cout<<"YES\n" : cout<<"NO\n";
     }
     
     return 0;

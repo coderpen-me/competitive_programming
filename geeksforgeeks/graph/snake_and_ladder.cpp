@@ -4,7 +4,7 @@ typedef long long ll;
 #define vi vector<int>
 #define vs vector<string>
 #define vvi vector<vector<int>>
-#define pb(a) push_back(a)
+
 #define LP(i, n) for (ll i = 0; i < n; i++)
 #define LP1(i, n) for (ll i = 1; i <= n; i++)
 #define BLP1(i, n) for (ll i = n; i > 0; i--)
@@ -82,12 +82,73 @@ int testcases()
     return test;
 }
 
+int findx(int n){
+    return int(ceil(n/6));
+}
+int findy(int n, int p){
+    if( p == 0 ){
+        if(n % p == 0){
+            return 6;
+        }
+        return (n % p);
+    }
+    else{
+        int j = n % p;
+        if(j == 0) return 1;
+        return (7-j);
+    }
+}
+
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
+        cin>>u;
+        int arr[6][7];
+        for(int i = 1; i <= 5; i++){
+            if(i & 1){
+                for(int j = 1; j <= 6; j++){
+                    int val = (6*(i-1)) + j;
+                    arr[i][j] = val;
+                }
+            }
+            else{
+                for(int j = 1; j <= 6; j++){
+                    int val = (6*(i-1)) + (6-j+1);
+                    arr[i][j] = val;
+                }
+            }
+            
+        }
         
+        while(u--){
+            cin>>v>>w;
+            cout<<v<<" "<<w<<"    ";
+            int i1, j1, i2, j2;
+            int dir;
+            if((v >= 7 && v <= 12) || (v >= 19 && v <= 24)){
+                dir = 1;
+            }
+            else dir = 0;
+            i1 = findx(v);
+            j1 = findy(v, dir);
+
+            if((w >= 7 && w <= 12) || (w >= 19 && w <= 24)){
+                dir = 1;
+            }
+            else dir = 0;
+            i2 = findx(w);
+            j2 = findy(w, dir);
+
+            arr[i1][j1] = w;
+        }
+        for(int i = 5; i > 0; i--){
+            LP1(j, 6){
+                cout<<arr[i][j]<<" ";
+            }
+            nl;
+        }
     }
     
     return 0;
