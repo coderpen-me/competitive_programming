@@ -3,7 +3,14 @@
 majority_element.cpp
 subset-ii.cpp
 
+graph -- tournament_winner.cpp
+graph -- no_of_islands.cpp
+
 // codeforces //
 
 DIV2-292-Drazil_and_factorial.cpp
+
+//GeeksforGeeks
+
+graphs -- snake and ladder.cpp
 
