@@ -5,7 +5,6 @@ typedef long long ll;
 #define vs vector<string>
 #define vvi vector<vector<int>>
 #define pb(a) push_back(a)
-
 #define LP(i, n) for (ll i = 0; i < n; i++)
 #define LP1(i, n) for (ll i = 1; i <= n; i++)
 #define BLP1(i, n) for (ll i = n; i > 0; i--)
@@ -85,25 +84,51 @@ int testcases()
 
 int main(){
 IOS();
-    //t = tc();
-    t = 1;
+    t = tc();
+    //t = 1;
     while(t--){
-        cin>>u;
-        LP(i, u)
-            cin>>a[i];
-        LP(i, u)
-            cin>>b[i];
-        num = 0;
-        vi cc;
-        LP(i, u)
-            cc.pb(a[i] - b[i]);
-        sort(cc.begin(), cc.end());
-        LP(i, u){
-            if(cc[i] <= 0) continue;
-            int p = lower_bound(cc.begin(), cc.end(), -cc[i] + 1) - cc.begin();
-            num += (i - p);
+        ll a, b, c, d;
+        cin>>a>>b>>c>>d;
+        ll x, y, x1, y1, x2, y2;
+        cin>>x>>y>>x1>>y1>>x2>>y2;
+        ll xa = 0, ya = 0;
+        if((a - b) >= 0){
+            xa = b - a;
         }
-        b1(num);
+        else xa = (b- a);
+        if((c - d) >= 0){
+            ya = d - c;
+        }
+        else ya = d - c;
+        ll flag = 0;
+        if(xa >= 0){
+            if(x2 < (x + 1)){
+                flag = 1;
+            }
+        }
+        else{
+            if(x1 > (x - 1)){
+                flag = 1;
+            }
+        }
+        if(ya >= 0){
+            if(y2 < (y + 1)){
+                flag = 1;
+            }
+        }
+        else{
+            if(y1 > (y - 1)){
+                flag = 1;
+            }
+        }
+        if(flag == 1){
+            b1("NO");
+            continue;
+        }
+        if((x1 <= (x + xa)) && (x2 >= (x + xa)) && (y1 <= (y + ya)) && (y2 >= (y + ya))){
+            b1("YES");
+        }
+        else b1("NO");
     }
     
     return 0;
