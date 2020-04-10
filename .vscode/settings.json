@@ -13,7 +13,10 @@
         "initializer_list": "cpp",
         "regex": "cpp",
         "valarray": "cpp",
-        "random": "cpp"
+        "random": "cpp",
+        "cmath": "cpp",
+        "cstdarg": "cpp"
     },
-    "competitive-programming-helper.firstTime": false
+    "competitive-programming-helper.firstTime": false,
+    "python.pythonPath": "C:\\Users\\adars\\AppData\\Local\\Programs\\Python\\Python36\\python.exe"
 }
