@@ -81,57 +81,98 @@ int testcases()
     return test;
 }
 
-bool isPrime(int n)
+int facts(int x)
 {
-    if (n <= 1)
-        return false;
-    for (int i = 2; i < n; i++)
-        if (n % i == 0)
-            return false;
-    return true;
+    int ctr = 0;
+    while (x % 2 == 0 && x > 0)
+    {
+        ctr++;
+        x /= 2;
+        if (ctr >= 2)
+            break;
+    }
+    return ctr;
+}
+
+void modd(int a[], int n)
+{
+    LP(i, n)
+    {
+        if (a[i] % 2 == 1)
+            a[i] = 0;
+        else
+        {
+            a[i] = facts(a[i]);
+        }
+    }
 }
 
 int main()
 {
     IOS();
     t = tc();
-    //t = 1;
     while (t--)
     {
-        cin >> u;
-        if (u <= 3)
+        cin>>u;
+        int a[u];
+        LP(i, u)
         {
-            b1(1);
-            if (u == 1)
+            cin >> v;
+            a[i] = abs(v);
+        }
+        sum = 0;
+        modd(a, u);
+
+        int b[u];
+        LP(i, u)
+        {
+            b[i] = 0;
+        }
+        LP(i, u)
+        {
+            if (a[i] > 1)
             {
-                b1("1 1");
+                int l = (u - i);
+                b[i] = l;
+                sum += l;
             }
-            else if (u == 2)
+        }
+        LP(i, u)
+        {
+            if (a[i] == 1)
             {
-                b1("2 1 2");
+                for (int j = i + 1; j < u; j++)
+                {
+                    if (a[j] > 0)
+                    {
+                        int l = (u - j);
+                        sum += l;
+                        b[i] = l;
+                        i = j - 1;
+                        break;
+                    }
+                }
             }
+        }
+        w = 0;
+        for (int i = 0; i < u; i++)
+        {
+            if (a[i] == 0) w++;
             else
             {
-                b1("3 1 2 3");
+                ll s = w * (w + 1) / 2;
+                sum += s + w * b[i];
+                w = 0;
             }
         }
-        else
-        {
-            b1(u / 2);
-            b1("3 1 2 3");
-            for (int i = 4; i <= u; i += 2)
-            {
-                if (i + 1 <= u)
-                {
-                    b3("2", i, (i + 1));
-                }
-                else
-                {
-                    b2("1", i);
-                }
-            }
-        }
-    }
 
+        if (w > 0)
+        {
+            ll s = w * (w + 1) / 2;
+            sum += s;
+        }
+
+        b1(sum);
+    }
     return 0;
 }
