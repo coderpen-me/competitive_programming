@@ -70,6 +70,7 @@ void printvectorvectorint(vector<vector<int>> A)
     }
     nl;
 }
+ll a[MAXn], b[MAXn], c[MAXn], d[MAXn];
 ll t = 0, u = 0, v = 0, w = 0, x = 0, y = 0, z = 0;
 ll sum = 0, sum1 = 0, mul = 0, subs = 0, test = 0, num = 0, num1 = 0;
 //ll aa=0, bb=0, cc=0, dd=0, ee=0;
@@ -81,46 +82,41 @@ int testcases()
     return test;
 }
 
+vector<int> solve(vector<vector<int>> &A)
+{
+    int n = A.size();
+    vector<int> point(2 * n), point1(2 * n, 0), ans(n);
+    for (int i = 0; i < 2 * n; i += 2)
+    {
+        point[i] = A[i / 2][0];
+        point[i + 1] = A[i / 2][0] + A[i / 2][1] - 1;
+    }
+    sort(point.begin(), point.end());
+    auto end = unique(point.begin(), point.end());
+    int ma1 = 0, n1 = end - point.begin();
+    for (int i = 0; i < n; i++)
+    {
+        int p = A[i][0], len = A[i][1];
+        int in = lower_bound(point.begin(), end, A[i][0]) - point.begin();
+        int ma = point1[in];
+        for (int j = in + 1; j < n1 && point[j] < p + len; j++)
+            ma = max(ma, point1[j]);
+        ma += len;
+        for (int j = in; j < n1 && point[j] < p + len; j++)
+            point1[j] = ma;
+        ma1 = max(ma1, ma);
+        ans[i] = ma1;
+    }
+    return ans;
+}
+
 int main()
 {
     IOS();
-    t = tc();
-    //t = 1;
+    //t = tc();
+    t = 1;
     while (t--)
     {
-        long long n, x, extra = 0, wel = 0;
-        double av;
-        cin >> n >> x;
-        long long a[n];
-
-        for (int i = 0; i < n; i++)
-        {
-            cin >> a[i];
-        }
-
-        sort(a, a + n, greater<long long>());
-
-        for (int i = 0; i < n; i++)
-        {
-            if (a[i] >= x)
-            {
-                extra += a[i];
-                wel++;
-            }
-            else
-            {
-                extra += a[i];
-                av = extra / ((wel + 1) * 1.0);
-                if (av >= x)
-                {
-                    wel++;
-                    continue;
-                }
-                break;
-            }
-        }
-
-        cout << wel << endl;
     }
 
     return 0;
