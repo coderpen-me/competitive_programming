@@ -42,3 +42,23 @@
 > Questions :
     - Codechef ANSLEAK solved - (April Long Challenge)
     - Codeforces 634 DIV 3 (3/6) solved.
+
+## [April 14 2020]
+
+> Topics :
+    - Design a parking lot
+    - Design Patterns Introduction <https://sourcemaking.com/>
+> Questions :
+    - Heaps 1   -- Day 67 -- A+H -- Scaler
+
+## [April 15 2020]
+
+> Questions :
+    - Heaps 2    -- Day 69 -- A -- Scaler
+
+## [April 16 2020]
+
+> Topics :
+> Questions :
+    - Median in a stream of numbers  -- gfg <https://practice.geeksforgeeks.org/problems/find-median-in-a-stream/0>
+    - Nearly Sorted Algorithm -- gfg <https://practice.geeksforgeeks.org/problems/nearly-sorted-algorithm/0>
