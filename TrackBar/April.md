@@ -6,7 +6,7 @@
 
 1. Segment Trees
 
-> Questions:
+> Questions (Scaler Academy):
 
 1. Bob and Queries  -- DAY 63 -- A -- Segment Trees
 2. Mask Updates     -- Day 63 -- H -- Segment Trees -- TLE(100/400)
@@ -75,3 +75,70 @@
 > Concepts :
     - Find the celebrity -- LeetFree <https://leetfree.com/problems/find-the-celebrity.html>
     - One edit distance -- LeetFree <https://leetfree.com/problems/one-edit-distance.html>
+
+## [April 18 2020]
+
+> Topics :
+    - Modular Inverse <https://cp-algorithms.com/algebra/module-inverse.html><https://codeforces.com/blog/entry/72527>
+    - Binary Exponential <https://cp-algorithms.com/algebra/binary-exp.html>
+> Questions :
+> Concepts :
+    - Longest Substring with At Most K Distinct Characters -- LeetFree <https://leetfree.com/problems/longest-substring-with-at-most-k-distinct-characters.html>
+
+## [April 19 2020]
+
+> Topics :
+    - System Design - Cascade Pattern
+    - System Design - Movie Booking System
+
+## [April 20 2020]
+
+> Topics :
+    - System Design - Design a parking lot
+    - System Design - Design a Movie Booking System (Revisited)
+    - System Design - Design a library management system
+
+## [April 21 2020]
+
+- NULL
+
+## [April 22 2020]
+
+- NULL
+
+## [April 23 2020]
+
+> Questions (LeetFree - Premium Page 2) :
+    - Count unique value subtrees -- LeetFree
+    - Flatten 2D Array -- LeetFree
+    - Meeting Room -- LeetFree
+    - Moving Average from Data Stream -- LeetFree
+    - ZigZag Iterator -- LeetFree
+    - Maximum Size Subarray Sum Equals k -- LeetFree
+
+## [April 24 2020]
+
+> Questions (LeetFree - Premium Page 2) :
+    - Inorder Successor in BST
+    - Binary Tree Upside Down
+    - Range Sum Query 2D - Mutable
+
+## [April 25 2020]
+
+> Questions (LeetFree - Premium Page 3) :
+    - Shortest Word Distance II
+    - Shortest Word Distance I
+    - Read N Characters Given Read4
+    - Palindrome Permutation
+    - Word Pattern II
+    - Word Pattern I
+    - Paint House I
+    - Paint House II
+    - Generalized Abbreviation
+    - Missing Ranges
+
+## [April 26 2020]
+
+> Topics :
+> Concepts :
+>
