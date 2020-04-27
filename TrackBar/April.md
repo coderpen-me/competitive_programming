@@ -139,6 +139,13 @@
 
 ## [April 26 2020]
 
-> Topics :
-> Concepts :
->
+> Contest :
+    - Codeforces Educational Round 86 ( Solved 2 / 6 ) +51 Rating
+
+## [April 27 2020]
+
+> Questions :
+    - Bus & Passanger  - Scaler - DAY 32 (REV) - GREEDY
+    - Change The Array - Scaler - Day 38       - GREEDY
+    - Distribute Candy - Scaler - Day 71 (REV) - GREEDY
+    - Seats            - Scaler - Day 71 (REV) - GREEDY
