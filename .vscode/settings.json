@@ -15,7 +15,11 @@
         "valarray": "cpp",
         "random": "cpp",
         "cmath": "cpp",
-        "cstdarg": "cpp"
+        "cstdarg": "cpp",
+        "functional": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp"
     },
     "competitive-programming-helper.firstTime": false,
     "python.pythonPath": "C:\\Users\\adars\\AppData\\Local\\Programs\\Python\\Python36\\python.exe"

@@ -135,7 +135,6 @@
     - Paint House I
     - Paint House II
     - Generalized Abbreviation
-    - Missing Ranges
 
 ## [April 26 2020]
 
@@ -149,3 +148,11 @@
     - Change The Array - Scaler - Day 38       - GREEDY
     - Distribute Candy - Scaler - Day 71 (REV) - GREEDY
     - Seats            - Scaler - Day 71 (REV) - GREEDY
+
+## [April 28 2020]
+
+> Questions (LeetFree - Premium Page 3) :
+    - Missing Ranges
+    - Rev 25 April
+
+## [April 29 2020]

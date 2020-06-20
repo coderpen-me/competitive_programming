@@ -1,0 +1,1 @@
+[{"input":"5 9\nadd 11101\npath 1 2\nadd 01110\npath 3 2\nadd 00100\npath 3 3\nadd 10110\nremove\npath 1 2\n","output":"0\n1\n3\n2\n"}]
