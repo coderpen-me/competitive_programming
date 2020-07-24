@@ -85,7 +85,33 @@ int main()
     cin >> t;
     while (t--)
     {
-        
+        cin >> u;
+        ll arr[u];
+        for (ll i = 0; i < u; i++)
+        {
+            cin>>arr[i];
         }
+        if(u == 1){
+            cout<<"0\n";
+            continue;
+        }
+        ll flag = 0;
+        ll i = 0;
+        for (i = u-2; i >= 0; i--)
+        {
+            if(flag == 0){
+                if(arr[i] < arr[i+1]){
+                    flag = 1;
+                }
+            }
+            else{
+                if(arr[i] > arr[i+1]){
+                    //cout<<"CHATKI"<<i<<" ";
+                    break;
+                }
+            }
+        }
+        cout<<(i+1)<<"\n";
+    }
     return 0;
 }

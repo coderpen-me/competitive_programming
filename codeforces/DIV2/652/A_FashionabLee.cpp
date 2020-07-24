@@ -85,7 +85,11 @@ int main()
     cin >> t;
     while (t--)
     {
-        
+        cin >> u;
+        if(u % 4 == 0){
+            cout<<"YES\n";
         }
+        else cout<<"NO\n";
+    }
     return 0;
 }

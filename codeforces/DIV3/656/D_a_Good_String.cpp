@@ -79,13 +79,43 @@ int testcases()
     return test;
 }
 
+int solve(string in, char tok)
+{
+    if (in.size() == 1)
+    {
+        return !(in[0] == tok);
+    }
+
+    ll ctr1 = 0, ctr2 = 0;
+    ll mid = (in.size()) / 2;
+
+    
+
+    ctr1 = (in.size()/2) - count(in.begin(), in.begin() + mid, tok);
+    ctr2 = (in.size()/2) - count(in.begin() + mid, in.end(), tok);
+    
+    //a1(tok);
+    //a2(count(in.begin() + l, in.begin() + mid + 1, tok), count(in.begin() + mid + 1, in.begin() + r + 1, tok));
+    //b4(ctr1, ctr2, l, r);
+
+    ctr1 += solve(string(in.begin()+mid, in.end()), tok + 1);
+    ctr2 += solve(string(in.begin(), in.begin()+mid), tok + 1);
+
+    
+
+    return min(ctr1, ctr2);
+}
+
 int main()
 {
     ll t;
     cin >> t;
     while (t--)
     {
-        
-        }
+        cin >> u;
+        cin >> in;
+        cout << solve(in, 'a');
+        cout << "\n";
+    }
     return 0;
 }

@@ -79,13 +79,18 @@ int testcases()
     return test;
 }
 
+int recurr(vi ret, ll p, ll pos){
+    
+}
+
 int main()
 {
     ll t;
-    cin >> t;
-    while (t--)
+    vector<int> ret;
+    while (cin >> t)
     {
-        
-        }
+        ret.push_back(t);
+    }
+    cout<<recurr(ret, 0, 1);
     return 0;
 }

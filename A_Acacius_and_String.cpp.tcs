@@ -1,0 +1,1 @@
+[{"input":"6\n15\nabaca??cab?ca?a\n7\n???????\n11\naba?abacaba\n11\nabacaba?aba\n15\nasdf???f???qwer\n11\nabacabacaba\n","output":"Yes\nabacaba\nYes\nabacaba\nYes\nabadabacaba\nYes\nabacabadaba\nNo\nNo"}]
