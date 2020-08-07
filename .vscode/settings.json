@@ -19,7 +19,9 @@
         "functional": "cpp",
         "bitset": "cpp",
         "chrono": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "xiosbase": "cpp",
+        "xstring": "cpp"
     },
     "competitive-programming-helper.firstTime": false,
     "python.pythonPath": "C:\\Users\\adars\\AppData\\Local\\Programs\\Python\\Python36\\python.exe"
