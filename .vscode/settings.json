@@ -21,7 +21,10 @@
         "chrono": "cpp",
         "algorithm": "cpp",
         "xiosbase": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "memory": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp"
     },
     "competitive-programming-helper.firstTime": false,
     "python.pythonPath": "C:\\Users\\adars\\AppData\\Local\\Programs\\Python\\Python36\\python.exe"
