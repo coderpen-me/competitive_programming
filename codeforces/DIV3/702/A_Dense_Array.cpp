@@ -79,18 +79,25 @@ int testcases()
     return test;
 }
 
-int recurr(vi ret, ll p, ll pos){
-    
-}
-
-int main()
-{
-    ll t;
-    vector<int> ret;
-    while (cin >> t)
-    {
-        ret.push_back(t);
+int main(){
+IOS();
+    t = tc();
+    //t = 1;
+    while(t--){
+        cin>>u;
+        vi A(u);
+        LP(i, u) cin>>A[i];
+        ll ret = 0;
+        for(ll i = 0; i < u-1; i++){
+            ll mini = min(A[i], A[i+1]);
+            ll maxa = max(A[i], A[i+1]);
+            while(maxa > 2 * mini){
+                mini *= 2;
+                ret++;
+            }
+        }
+        b1(ret);
     }
-    cout<<recurr(ret, 0, 1);
+    
     return 0;
 }
